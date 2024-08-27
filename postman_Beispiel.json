@@ -1,0 +1,3035 @@
+{
+	"info": {
+		"_postman_id": "657f51df-dce8-43d5-bb70-6fad5b61b0b3",
+		"name": "1 api1.3cx.eu",
+		"description": "## 3CX Phone 18 API documentation\n\nSee also [https://creomate.com/3cx-webapi/](https://creomate.com/3cx-webapi/)\n\n**AuthKeys.csv** - a text file for creating API key access for incoming requests\n\nExample:\n\n```\nkey;email;name;access\nJNJP5UqGDhX89ue2POsb1Kto;support@creomate.com;Creatio;full\nnp88bAodJl;zendesk@creomate.com;Zendesk;full\n\n ```",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "654357",
+		"_collection_link": "https://creomate.postman.co/workspace/efd275f9-eca0-4331-a329-f063d27a6821/collection/654357-657f51df-dce8-43d5-bb70-6fad5b61b0b3?action=share&source=collection_link&creator=654357"
+	},
+	"item": [
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "Get WebAPI info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/tcx",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"tcx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate license",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/license/activate?key=NHQE-QRND-TRIAL",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"license",
+								"activate"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "NHQE-QRND-TRIAL",
+									"description": "License key"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate license",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/license/deactivate?key=NHQE-QRND-TRIAL",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"license",
+								"deactivate"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "NHQE-QRND-TRIAL",
+									"description": "License key"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Custom DB Operator state history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/Vm8ck9ms1j/table.create?name=operator_state_history",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"Vm8ck9ms1j",
+								"table.create"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "operator_state_history"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Custom DB Webhook history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/Vm8ck9ms1j/table.create?name=webhook_history",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"Vm8ck9ms1j",
+								"table.create"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "webhook_history"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET methods",
+			"item": [
+				{
+					"name": "Get the current number of calls",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/pbx.calls.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"pbx.calls.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PBX status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/pbx.ac.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"pbx.ac.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PBX status (additional)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/pbx.callsinfo.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"pbx.callsinfo.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a list of all external lines (paths)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/all.line.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"all.line.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a list of all user extensions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/all.ext.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"all.ext.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a list of registered user extensions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/all.registered.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"all.registered.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a list of ring groups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/all.group.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"all.group.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a list of IVRs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/all.ivr.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"all.ivr.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a list of extension group (Debian only)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/all.extgroup.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"all.extgroup.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an extension properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.info.get?num=102",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.info.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "102",
+									"description": "Extension"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get an extension status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.state.get?num=102",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.state.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "102",
+									"description": "Extension"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a ring group members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/group.members.get?num=803",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"group.members.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "803",
+									"description": "Ring group"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a free ring group members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/group.free.get?num=803",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"group.free.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "803",
+									"description": "Ring group"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a group members (Debian only)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/extgroup.members.get?name=__DEFAULT__",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"extgroup.members.get"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "__DEFAULT__",
+									"description": "Group"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SET methods",
+			"item": [
+				{
+					"name": "Set RingGroup Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/group.members.set?num=945&members=101,103",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"group.members.set"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "945"
+								},
+								{
+									"key": "members",
+									"value": "101,103"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Extension forwarding status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.fwd.set?num=102&status=Available&message=Custom message",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.fwd.set"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "102",
+									"description": "Extension"
+								},
+								{
+									"key": "status",
+									"value": "Available",
+									"description": "Forwarding status {Available/Away/Out of office/Custom 1/Custom 2}"
+								},
+								{
+									"key": "message",
+									"value": "Custom message"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Extension global queue status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.queueglobal.set?num=102&log=on",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.queueglobal.set"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "102",
+									"description": "Extension"
+								},
+								{
+									"key": "log",
+									"value": "on",
+									"description": "{on/off}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Extension queue status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.queue.set?num=102&queue=802&log=off",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.queue.set"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "102",
+									"description": "Extension"
+								},
+								{
+									"key": "queue",
+									"value": "802",
+									"description": "Queue"
+								},
+								{
+									"key": "log",
+									"value": "off",
+									"description": "{on/off}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Extension recording options",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.options.set?num=102&enabled=on&external=on&recording=external",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.options.set"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "102",
+									"description": "Extension"
+								},
+								{
+									"key": "enabled",
+									"value": "on",
+									"description": "Enable extension {on/off}"
+								},
+								{
+									"key": "external",
+									"value": "on",
+									"description": "Enable external calls {on/off}"
+								},
+								{
+									"key": "recording",
+									"value": "external",
+									"description": "Call recording options {off/external/all}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Queue management",
+			"item": [
+				{
+					"name": "Queue New",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.new?num=813&name=API Queue&pollingstrategy=3&mastertimeout=300&ringtimeout=30&enableintro=0&introfile=onhold.wav&announcequeueposition=0&announcementinterval=30&noanswerdest=extension&noanswerextension=101&noanswerexternal=381212304455&primarygroup=__DEFAULT__",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.new"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "813",
+									"description": "Queue extension (required)"
+								},
+								{
+									"key": "name",
+									"value": "API Queue",
+									"description": "Queue Name"
+								},
+								{
+									"key": "pollingstrategy",
+									"value": "3",
+									"description": "Polling strategy (0-13) see manual"
+								},
+								{
+									"key": "mastertimeout",
+									"value": "300",
+									"description": "Maximum Queue Wait Time (seconds)"
+								},
+								{
+									"key": "ringtimeout",
+									"value": "30",
+									"description": "Ring Time (Seconds)"
+								},
+								{
+									"key": "enableintro",
+									"value": "0",
+									"description": "0 or 1"
+								},
+								{
+									"key": "introfile",
+									"value": "onhold.wav",
+									"description": "Intro filename"
+								},
+								{
+									"key": "announcequeueposition",
+									"value": "0",
+									"description": "0 or 1"
+								},
+								{
+									"key": "announcementinterval",
+									"value": "30",
+									"description": "Announcement Interval (seconds)"
+								},
+								{
+									"key": "noanswerdest",
+									"value": "extension",
+									"description": "extension/voicemail/ivr/queue/ringgroup/external/routepoint/none"
+								},
+								{
+									"key": "noanswerextension",
+									"value": "101",
+									"description": "Destination if no answer"
+								},
+								{
+									"key": "noanswerexternal",
+									"value": "381212304455",
+									"description": "Noanswer external number"
+								},
+								{
+									"key": "primarygroup",
+									"value": "__DEFAULT__"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Queue Update",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.update?num=813&name=API Queue&pollingstrategy=3&mastertimeout=300&ringtimeout=30&enableintro=0&introfile=onhold.wav&announcequeueposition=0&announcementinterval=30&noanswerdest=extension&noanswerextension=101&noanswerexternal=381212304455&primarygroup=__DEFAULT__",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.update"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "813",
+									"description": "Queue extension (required)"
+								},
+								{
+									"key": "name",
+									"value": "API Queue",
+									"description": "Queue Name"
+								},
+								{
+									"key": "pollingstrategy",
+									"value": "3",
+									"description": "Polling strategy (0-13) see manual"
+								},
+								{
+									"key": "mastertimeout",
+									"value": "300",
+									"description": "Maximum Queue Wait Time (seconds)"
+								},
+								{
+									"key": "ringtimeout",
+									"value": "30",
+									"description": "Ring Time (Seconds)"
+								},
+								{
+									"key": "enableintro",
+									"value": "0",
+									"description": "0 or 1"
+								},
+								{
+									"key": "introfile",
+									"value": "onhold.wav",
+									"description": "Intro filename"
+								},
+								{
+									"key": "announcequeueposition",
+									"value": "0",
+									"description": "0 or 1"
+								},
+								{
+									"key": "announcementinterval",
+									"value": "30",
+									"description": "Announcement Interval (seconds)"
+								},
+								{
+									"key": "noanswerdest",
+									"value": "extension",
+									"description": "extension/voicemail/ivr/queue/ringgroup/external/routepoint/none"
+								},
+								{
+									"key": "noanswerextension",
+									"value": "101",
+									"description": "Destination if no answer"
+								},
+								{
+									"key": "noanswerexternal",
+									"value": "381212304455",
+									"description": "Noanswer external number"
+								},
+								{
+									"key": "primarygroup",
+									"value": "__DEFAULT__"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Queue Del",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.del?num=813",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.del"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "813",
+									"description": "Queue extension"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a list of queues",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/all.queue.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"all.queue.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a talking queue members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.talk.get?num=802",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.talk.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "802",
+									"description": "Queue"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a free queue members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.free.get?num=804",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.free.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "804",
+									"description": "Queue"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a queue availability",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.isfree.get?num=804",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.isfree.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "804",
+									"description": "Queue"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a queue members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.members.get?num=802",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.members.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "802",
+									"description": "Queue"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a queue managers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.managers.get?num=802",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.managers.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "802",
+									"description": "Queue"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Queue Agents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.agents.set?num=807&agents=102,105",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.agents.set"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "807"
+								},
+								{
+									"key": "agents",
+									"value": "102,105"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Queue Managers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/queue.managers.set?num=807&managers=102,105",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"queue.managers.set"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "807"
+								},
+								{
+									"key": "managers",
+									"value": "102,105"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Call control",
+			"item": [
+				{
+					"name": "Make call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/makecall?first=102&second=381629759787",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"makecall"
+							],
+							"query": [
+								{
+									"key": "first",
+									"value": "102",
+									"description": "Extension (mandatory)"
+								},
+								{
+									"key": "second",
+									"value": "381629759787",
+									"description": "External number (mandatory)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Barge-in",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/bargein?internal=101&external=381629759787&num=102&contact=102&mode=bargein",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"bargein"
+							],
+							"query": [
+								{
+									"key": "internal",
+									"value": "101"
+								},
+								{
+									"key": "external",
+									"value": "381629759787"
+								},
+								{
+									"key": "num",
+									"value": "102"
+								},
+								{
+									"key": "contact",
+									"value": "102",
+									"description": "optional"
+								},
+								{
+									"key": "mode",
+									"value": "bargein",
+									"description": "{bargein/listen/whisper}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Drop call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/drop?num=806&contact=102&external=787",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"drop"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "806",
+									"description": "Extension (mandatory)"
+								},
+								{
+									"key": "contact",
+									"value": "102",
+									"description": "Device contact (optional)"
+								},
+								{
+									"key": "external",
+									"value": "787",
+									"description": "External number (optional)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Answer call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/answer?num=101&contact=101",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"answer"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "101",
+									"description": "Extension"
+								},
+								{
+									"key": "contact",
+									"value": "101",
+									"description": "Device contact"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tranfer call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/transfer?num=102&contact=102&dest=381629759787",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"transfer"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "102",
+									"description": "Extension"
+								},
+								{
+									"key": "contact",
+									"value": "102",
+									"description": "Device contact"
+								},
+								{
+									"key": "dest",
+									"value": "381629759787",
+									"description": "Tranfer point number"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Join call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/join?num=102",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"join"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "102",
+									"description": "Extension"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get extension devices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.devices.get?num=101",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.devices.get"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "101",
+									"description": "Extension"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Extension",
+			"item": [
+				{
+					"name": "Ext.new",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.new?num=300",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.new"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "300",
+									"description": "Extension number"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ext.delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.del?num=521",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.del"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "521",
+									"description": "Extension number"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ext.update full",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.update?num=300&enabled={0/1}&firstname=Firstname&lastname=Lastname&email=api@api.com&mobile={}&authid=300&authpass=300&callerid={}&deliveraudio={0/1}&recordcalls={0/1/2}&sipid={}&reinvite={0/1}&replaces={0/1}&vmemail={0/1/2/3}&vmenabled={0/1}&vmpin={}&vmplaycallerid={0/1}&vmplaydatetime={0/1/2}&internal={0/1}&noanswertimeout={}",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.update"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "300",
+									"description": "Extension number"
+								},
+								{
+									"key": "enabled",
+									"value": "{0/1}",
+									"description": "{0/1}"
+								},
+								{
+									"key": "firstname",
+									"value": "Firstname"
+								},
+								{
+									"key": "lastname",
+									"value": "Lastname"
+								},
+								{
+									"key": "email",
+									"value": "api@api.com"
+								},
+								{
+									"key": "mobile",
+									"value": "{}"
+								},
+								{
+									"key": "authid",
+									"value": "300"
+								},
+								{
+									"key": "authpass",
+									"value": "300"
+								},
+								{
+									"key": "callerid",
+									"value": "{}"
+								},
+								{
+									"key": "deliveraudio",
+									"value": "{0/1}",
+									"description": "0/1"
+								},
+								{
+									"key": "recordcalls",
+									"value": "{0/1/2}",
+									"description": "0/1/2"
+								},
+								{
+									"key": "sipid",
+									"value": "{}"
+								},
+								{
+									"key": "reinvite",
+									"value": "{0/1}",
+									"description": "0/1"
+								},
+								{
+									"key": "replaces",
+									"value": "{0/1}",
+									"description": "0/1"
+								},
+								{
+									"key": "vmemail",
+									"value": "{0/1/2/3}",
+									"description": "0/1/2/3"
+								},
+								{
+									"key": "vmenabled",
+									"value": "{0/1}",
+									"description": "0/1"
+								},
+								{
+									"key": "vmpin",
+									"value": "{}"
+								},
+								{
+									"key": "vmplaycallerid",
+									"value": "{0/1}",
+									"description": "0/1"
+								},
+								{
+									"key": "vmplaydatetime",
+									"value": "{0/1/2}",
+									"description": "0/1/2"
+								},
+								{
+									"key": "internal",
+									"value": "{0/1}",
+									"description": "0/1"
+								},
+								{
+									"key": "noanswertimeout",
+									"value": "{}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ext.update short",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/ext.update?num=300&callerid=381629759787",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"ext.update"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "300",
+									"description": "Extension number"
+								},
+								{
+									"key": "enabled",
+									"value": "{0/1}",
+									"description": "{0/1}",
+									"disabled": true
+								},
+								{
+									"key": "firstname",
+									"value": "Firstname",
+									"disabled": true
+								},
+								{
+									"key": "lastname",
+									"value": "Lastname",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "api@api.com",
+									"disabled": true
+								},
+								{
+									"key": "mobile",
+									"value": "{}",
+									"disabled": true
+								},
+								{
+									"key": "authid",
+									"value": "300",
+									"disabled": true
+								},
+								{
+									"key": "authpass",
+									"value": "300",
+									"disabled": true
+								},
+								{
+									"key": "callerid",
+									"value": "381629759787"
+								},
+								{
+									"key": "deliveraudio",
+									"value": "{0/1}",
+									"description": "0/1",
+									"disabled": true
+								},
+								{
+									"key": "recordcalls",
+									"value": "{0/1/2}",
+									"description": "0/1/2",
+									"disabled": true
+								},
+								{
+									"key": "sipid",
+									"value": "{}",
+									"disabled": true
+								},
+								{
+									"key": "reinvite",
+									"value": "{0/1}",
+									"description": "0/1",
+									"disabled": true
+								},
+								{
+									"key": "replaces",
+									"value": "{0/1}",
+									"description": "0/1",
+									"disabled": true
+								},
+								{
+									"key": "vmemail",
+									"value": "{0/1/2/3}",
+									"description": "0/1/2/3",
+									"disabled": true
+								},
+								{
+									"key": "vmenabled",
+									"value": "{0/1}",
+									"description": "0/1",
+									"disabled": true
+								},
+								{
+									"key": "vmpin",
+									"value": "{}",
+									"disabled": true
+								},
+								{
+									"key": "vmplaycallerid",
+									"value": "{0/1}",
+									"description": "0/1",
+									"disabled": true
+								},
+								{
+									"key": "vmplaydatetime",
+									"value": "{0/1/2}",
+									"description": "0/1/2",
+									"disabled": true
+								},
+								{
+									"key": "internal",
+									"value": "{0/1}",
+									"description": "0/1",
+									"disabled": true
+								},
+								{
+									"key": "noanswertimeout",
+									"value": "{}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "Contact.Find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/contact.find?num=420&min_len=0",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"contact.find"
+							],
+							"query": [
+								{
+									"key": "num",
+									"value": "420"
+								},
+								{
+									"key": "min_len",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact.Delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/contact.del?id=1",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"contact.del"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact.New",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/contact.new?firstname=FirstName&lastname=LastName&company=Company&phone=Mobile&data0=Mobile2&data1=Home&data2=Home2&data3=Business&data4=Business2&data5=Email&data6=Other&data7=Businessfax&data8=Homefax&data9=Pager",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"contact.new"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "FirstName"
+								},
+								{
+									"key": "lastname",
+									"value": "LastName"
+								},
+								{
+									"key": "company",
+									"value": "Company"
+								},
+								{
+									"key": "phone",
+									"value": "Mobile"
+								},
+								{
+									"key": "data0",
+									"value": "Mobile2"
+								},
+								{
+									"key": "data1",
+									"value": "Home"
+								},
+								{
+									"key": "data2",
+									"value": "Home2"
+								},
+								{
+									"key": "data3",
+									"value": "Business"
+								},
+								{
+									"key": "data4",
+									"value": "Business2"
+								},
+								{
+									"key": "data5",
+									"value": "Email"
+								},
+								{
+									"key": "data6",
+									"value": "Other"
+								},
+								{
+									"key": "data7",
+									"value": "Businessfax"
+								},
+								{
+									"key": "data8",
+									"value": "Homefax"
+								},
+								{
+									"key": "data9",
+									"value": "Pager"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact.Update",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/contact.update?id=8&firstname=FirstName&lastname=LastName&company=Company&phone=Mobile&data0=Mobile2&data1=Home&data2=Home2&data3=Business&data4=Business2&data5=Email&data6=Other&data7=Businessfax&data8=Homefax&data9=Pager",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"contact.update"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8",
+									"description": "Contact ID"
+								},
+								{
+									"key": "firstname",
+									"value": "FirstName",
+									"description": "First name"
+								},
+								{
+									"key": "lastname",
+									"value": "LastName",
+									"description": "Last name"
+								},
+								{
+									"key": "company",
+									"value": "Company",
+									"description": "Company"
+								},
+								{
+									"key": "phone",
+									"value": "Mobile",
+									"description": "Mobile"
+								},
+								{
+									"key": "data0",
+									"value": "Mobile2",
+									"description": "Mobile 2"
+								},
+								{
+									"key": "data1",
+									"value": "Home",
+									"description": "Home"
+								},
+								{
+									"key": "data2",
+									"value": "Home2",
+									"description": "Home 2"
+								},
+								{
+									"key": "data3",
+									"value": "Business",
+									"description": "Business"
+								},
+								{
+									"key": "data4",
+									"value": "Business2",
+									"description": "Business 2"
+								},
+								{
+									"key": "data5",
+									"value": "Email",
+									"description": "Email address"
+								},
+								{
+									"key": "data6",
+									"value": "Other",
+									"description": "Other"
+								},
+								{
+									"key": "data7",
+									"value": "Businessfax",
+									"description": "Business fax"
+								},
+								{
+									"key": "data8",
+									"value": "Homefax",
+									"description": "Home fax"
+								},
+								{
+									"key": "data9",
+									"value": "Pager",
+									"description": "Pager"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact.Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/contact.get?id=6",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"contact.get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET SQL 3CX reports",
+			"item": [
+				{
+					"name": "Extension Statistic Report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"select * from cl_get_extension_statistics('2023-05-25 00:00:00','2023-07-01 23:59:59', '', '0', true, null) order by dn_, display_name_\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DID Report",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"with stats as ( select spi.Dn as trunk_number, spi.did_number, count(*) total_count, sum(case when c.is_answered then 1 else 0 end) answered_count from cl_calls c inner join cl_segments s on c.id = s.call_id inner join cl_participants sp on s.src_part_id = sp.id inner join cl_party_info spi on sp.info_id = spi.id where s.start_time between '2023-06-01 00:00:01' and '2025-08-01 00:00:01' and s.seq_order = 1 and spi.did_number is not null and spi.did_number != '' group by spi.Dn, spi.did_number ) select s.trunk_number, gw.name trunk_name, s.did_number, s.total_count, s.answered_count from stats s left join dn on s.trunk_number = dn.value left join externalline el on dn.iddn = el.fkiddn left join gateway gw on el.fkidgateway = gw.idgateway order by gw.name, s.did_number;\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Avtivity  (Graph)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"select x_value::date, y_value1, y_value2 from cl_user_activity('2023-06-01 00:00:00', 'h',  't', 't', '100 101 102 103 104 105 106 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299', '',  '02:00:00', cast( '00:00:00' as interval))\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET SQL 3CX DB",
+			"item": [
+				{
+					"name": "SQL API 3CX DB",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT * FROM public.call_history_view order by segment_start_time desc;\",\r\n\"count\":\"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB Chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT message_id, conversation_id, is_external, queue_number, sender_participant_ip, sender_participant_name, sender_participant_no, sender_participant_phone, sender_participant_email, sender_participant_pbx, message, time_sent, recipients, participants_grp_array FROM public.chat_messages_history_view order by time_sent desc;\",\r\n\"count\":\"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX Outbound calls",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT src_extended_display_name, count (*) FROM public.call_history_view where (segment_action_id = 5 or segment_action_id = 400) and  src_internal = true and segment_start_time > '2023-06-05 11:19:51+00' group by src_extended_display_name;\",\r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB Real missed list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT segment_start_time, segment_end_time, segment_action_id, segment_type, src_extended_display_name, src_display_name, src_internal, src_external, src_caller_number, dst_extended_display_name, dst_display_name, dst_internal, dst_external, dst_dn_type, dst_dn, dst_caller_number, dst_rec_id, call_time, call_answered FROM public.call_history_view where segment_action_id in (5,6) and dst_extended_display_name like 'Q%' order by segment_start_time desc;\",\r\n\"count\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB Count Real missed list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT count (*) FROM public.call_history_view where segment_action_id = 5 and dst_extended_display_name like 'Q%';\",\r\n\"count\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB IVR Missed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT segment_start_time, segment_end_time, segment_action_id, segment_type, src_extended_display_name, src_display_name, src_internal, src_external, src_caller_number, dst_extended_display_name, dst_display_name, dst_internal, dst_external, dst_dn_type, dst_dn, dst_caller_number, dst_rec_id, call_time, call_answered FROM public.call_history_view where segment_action_id = 5 and dst_extended_display_name like 'IVR%' order by segment_start_time desc;\",\r\n\"count\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB Extension Missed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT segment_start_time, segment_end_time, segment_action_id, segment_type, src_extended_display_name, src_display_name, src_internal, src_external, src_caller_number, dst_extended_display_name, dst_display_name, dst_internal, dst_external, dst_dn_type, dst_dn, dst_caller_number, dst_rec_id, call_time, call_answered FROM public.call_history_view where segment_action_id = 418 or segment_action_id = 101 order by segment_start_time desc;\",\r\n\"count\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB Uniq calls",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT min (segment_start_time), src_caller_number, count (*) as count1 FROM public.call_history_view where src_external = true and segment_start_time > '2022-06-09 11:19:51+00' group by src_caller_number having count(*) = 1;\",\r\n\"count\":\"100\"}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB Count 7",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT count (*) FROM public.callcent_queuecalls_view;\",\r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB Count 7 Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT call_time, count (*) as counter FROM public.call_history_view  where call_time > '00:01:00' group by call_time order by call_time;\",\r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB IVR Queue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT dst_extended_display_name, count(*) as C, max (call_time) as M, avg (call_time) as A FROM public.call_history_view  where call_time > '00:00:00' and (dst_extended_display_name like '%Queue%' or dst_extended_display_name like '%IVR%') group by dst_extended_display_name;\",\r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB IVR Lost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT segment_start_time, src_extended_display_name, src_display_name,  src_caller_number,  dst_extended_display_name, dst_display_name, dst_caller_number, call_time FROM public.call_history_view where segment_action_id = 5 and dst_extended_display_name like '%IVR%' order by segment_start_time desc\", \r\n\"count\":\"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB Unsuccessful outoging calls",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT segment_id, segment_start_time, segment_end_time, segment_action_id, segment_type, src_id, src_extended_display_name, src_display_name, src_internal, src_external, src_dn_type, src_dn, src_caller_number, src_participant_id, src_rec_id, dst_id, dst_extended_display_name, dst_display_name, dst_internal, dst_external, dst_dn_type, dst_dn, dst_caller_number, dst_participant_id, dst_rec_id, call_time, call_answered FROM public.call_history_view where segment_action_id = '400' and src_dn_type = 0 order by segment_start_time desc\",\r\n\"count\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB Records",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT id_recording, cl_participants_id, recording_url, start_time, end_time, transcription, archived, archived_url, call_type FROM public.recordings order by start_time desc;\",\r\n\"count\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SQL API 3CX DB GetScedule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT joindow, starttime, endtime FROM public.dn LEFT  JOIN  public.calendarhours ON dn.fkidcalendar = calendarhours.fkidcalendar where value = '520'\",\r\n\"count\":\"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET SQL Custom DB",
+			"item": [
+				{
+					"name": "Select User history",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT * FROM public.operator_state_history order by date desc;\",\r\n\"count\":\"10\",\r\n\"db_name\":\"user_state\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current users state",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"select ext as Ext, new_values as Status, to_char((EXTRACT( EPOCH FROM (NOW() - date)) * interval '1 sec')::interval, 'HH24:MI:SS' ) as TimeInStatus from( select date, old_values, new_values, ext, NOW() as datefinish from (SELECT date, old_values, new_values, ext, (select date from public.operator_state_history as tt where tt.ext=maint.ext and tt.date>maint.date order by date asc limit 1 ) as DateFinish FROM public.operator_state_history as maint order by date asc) as t3 where datefinish is null) as t4 order by Ext asc\",\r\n\"count\":\"100\",\r\n\"db_name\":\"user_state\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DROP User history",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"DROP TABLE public.operator_state_history;\",\r\n\"count\":\"10\",\r\n\"db_name\":\"user_state\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Webhook history",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT * FROM public.webhook_history order by date desc;\",\r\n\"count\":\"10\",\r\n\"db_name\":\"user_state\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET SQL Static",
+			"item": [
+				{
+					"name": "Get 3CX time (UTC)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT now(),now()::date\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Extensions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT id, iddn, dn, display_name FROM public.users_view;\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Queues",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT * FROM public.queue_view;\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ring groups",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT id, dn, display_name, strategy FROM public.ring_groups_view;\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Extensions by groups",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT extension_dn, extension_display_name, group_name FROM public.extensions_by_groups_view;\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Extensions by queues",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT extension_dn, extension_display_name, queue_dn, queue_display_name FROM public.extensions_by_queues_view;\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Extensions by ring groups",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"SELECT extension_dn, extension_display_name, ring_group_dn, ring_group_display_name, ring_group_strategy FROM public.extensions_by_ring_groups_view;\", \r\n\"count\":\"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/query",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "In/Out Rules",
+			"item": [
+				{
+					"name": "Outbound rules get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/outboundrules.get",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"outboundrules.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outbound rule set",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/outboundrule.set?",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"outboundrule.set"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outbound rule new",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/outboundrule.new?",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"outboundrule.new"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outbound rule delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/outboundrule.del",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"outboundrule.del"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outbound rule UP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/outboundrule.after?",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"outboundrule.after"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outbound rule Down",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/outboundrule.del",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"outboundrule.del"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inbound rule get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/inboundrule.get?linename=Era peer&rulename=1111",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"inboundrule.get"
+							],
+							"query": [
+								{
+									"key": "linename",
+									"value": "Era peer"
+								},
+								{
+									"key": "rulename",
+									"value": "1111"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inbound rule set",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/inboundrule.set?linename=Era peer&rulename=1111",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"inboundrule.set"
+							],
+							"query": [
+								{
+									"key": "linename",
+									"value": "Era peer"
+								},
+								{
+									"key": "rulename",
+									"value": "1111"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server management",
+			"item": [
+				{
+					"name": "CFD reload",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/JNJP5UqGDhX89ue2POsb1Kto1/cfd.reset?names=900",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"JNJP5UqGDhX89ue2POsb1Kto1",
+								"cfd.reset"
+							],
+							"query": [
+								{
+									"key": "names",
+									"value": "900",
+									"description": "script1,script2, ... ,scriptN"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CSV reload",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{3CXFQDN}}/webapi/{{AccessKey}}/csv.reread",
+							"protocol": "https",
+							"host": [
+								"{{3CXFQDN}}"
+							],
+							"path": [
+								"webapi",
+								"{{AccessKey}}",
+								"csv.reread"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "AccessKey",
+			"value": "JNJP5UqGDhX89ue2POsb1Kto"
+		},
+		{
+			"key": "3CXFQDN",
+			"value": "api1.3cx.eu:5001",
+			"type": "string"
+		}
+	]
+}
