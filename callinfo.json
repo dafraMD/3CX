@@ -1,0 +1,49 @@
+{
+    "count": 2,
+    "callsInfo": [
+        {
+            "callID": 46874,
+            "state": "Talking",
+            "startedAt": "2022-12-29T08:37:16Z",
+            "answeredAt": "2022-12-29T08:37:23Z",
+            "did": "",
+            "owner": {
+                "dnNum": "1739",
+                "dnType": "extension",
+                "externalParty": "1674",
+                "status": "Connected"
+            },
+            "talkTo": [
+                {
+                    "dnNum": "1674",
+                    "dnType": "extension",
+                    "externalParty": "1739",
+                    "status": "Connected"
+                }
+            ],
+            "routingTo": []
+        },
+        {
+            "callID": 46864,
+            "state": "Talking",
+            "startedAt": "2022-12-29T08:23:58Z",
+            "answeredAt": "2022-12-29T08:24:01Z",
+            "did": "",
+            "owner": {
+                "dnNum": "1126",
+                "dnType": "extension",
+                "externalParty": "1283",
+                "status": "Connected"
+            },
+            "talkTo": [
+                {
+                    "dnNum": "1283",
+                    "dnType": "extension",
+                    "externalParty": "1126",
+                    "status": "Connected"
+                }
+            ],
+            "routingTo": []
+        }
+    ]
+}
